@@ -27,5 +27,6 @@ namespace CarRentals
     
         public virtual DbSet<Rental_Records> Rental_Records { get; set; }
         public virtual DbSet<Type_Of_Car> Type_Of_Car { get; set; }
+        public string CustomerName { get; internal set; }
     }
 }

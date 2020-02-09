@@ -58,6 +58,10 @@ namespace CarRentals
             }
             if (isValid)
             {
+                var rentalRecords = new CarRentalDB5Entities();
+                
+               
+
                 MessageBox.Show($"Thank You For Choseing McIntosh Rentals Mr / Mrs. : {customerName}\n\r" +
                     $"The Car You selected is: { carBrand}\n\r" +
                     $"The Car Owner is: {ownerName}\n\r" +
@@ -73,7 +77,10 @@ namespace CarRentals
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            var cars = CarRentalDB5Entities1.Type_Of_Car.ToList();
+            CB_Car_List.DisplayMember = "Name";
+            CB_Car_List.ValueMember = "ID";
+            CB_Car_List.DataSource = cars;
         }
 
         private void Lunch_Window_Click(object sender, EventArgs e)
@@ -83,7 +90,7 @@ namespace CarRentals
             //display object created
             mainWindow.Show();
 
-
+                 
         }
 
     }
